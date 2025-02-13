@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Invitación a San Valentín encoded</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6ea;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .envelope-container {
+            position: relative;
+            cursor: pointer;
+        }
+        .envelope {
+            width: 250px;
+            height: 180px;
+            background-color: #ff4d6d;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .flap {
+            width: 0;
+            height: 0;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            border-bottom: 100px solid #ff4d6d;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+        .letter {
+            width: 90%;
+            height: 120px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            transition: bottom 0.5s ease-in-out;
+        }
+        .container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope-container" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap" id="flap"></div>
+            <div class="letter" id="letter">💌 ¡Toca para abrir! 💌</div>
+        </div>
+    </div>
+    
+    <div class="container" id="content">
+        <div id="petalsContainer"></div>
+        <div id="gifContainer">
+            <img id="gifContainerImg" src="mocha.gif" alt="Ositos Iniciales">
+        </div>
+        <div id="happyGifContainer" style="display: none;">
+            <img src="mocha5final.gif" alt="Ositos Felices" style="width: 50%; height: 100%;">
+        </div>
+        <div id="happyGifContainer2" style="display: none;">
+            <img src="mocha6final.gif" alt="Ositos Felices" style="width: 50%; height: 100%;">
+        </div>
+        <div id="happyGifContainer3" style="display: none;">
+            <img src="mocha7final.gif" alt="Ositos Felices" style="width: 50%; height: 100%;">
+        </div>
+        <div id="countdown" style="display: none;">
+            <p>Faltan <span id="days"></span> días, <span id="hours"></span> horas, <span id="minutes"></span> minutos y <span id="seconds"></span> segundos para San Valentín ❤️</p>
+        </div>  
+        <div id="happyGifContainer4" style="display: none;">
+            <img src="mocha9final.gif" alt="Ositos Felices" style="width: 50%; height: 100%;">
+        </div>
+        <div id="sadGifContainer" style="display: none;">
+            <img src="mocha2.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+        </div>
+        <div id="sadGifContainer1" style="display: none;">
+            <img src="mocha3.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+        </div>
+        <div id="sadGifContainer2" style="display: none;">
+            <img src="mocha4.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+        </div>
+        
+        <h1 id="question">¿Quieres ser quien me acompañe en San Valentin?</h1>
+        <div id="messageContainer" style="display: none;"></div>
+
+        <button id="siBtn">Sí</button>
+        <button id="noBtn">No</button>
+        <button id="secretBtn" style="position: absolute; top: 10px; right: 10px; opacity: 1;">Presioname</button>
+    </div>
+ 
+    <script>
+        function openEnvelope() {
+            document.getElementById("flap").style.transform = "rotateX(180deg)";
+            document.getElementById("letter").style.bottom = "200px";
+            setTimeout(() => {
+                document.querySelector(".envelope-container").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }, 1000);
+        }
+    </script>
+    <script src="script2.js"></script>
+    <script src="script12e.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</body>
+</html>

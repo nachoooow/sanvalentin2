@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #b60d0db0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    width: 80%;
+    max-width: 300px;
+}
+
+.container {
+    text-align: center;
+}
+
+#gifContainerImg {
+    width: 60%;
+    height: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#siBtn {
+    padding: 10px 20px; 
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #009705; /* Verde */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+#noBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #FF5733; /* Rojo */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+#noBtn span {
+    font-size: 18px;
+    color: #fcf4f4; /* Cambia el color del texto según tus preferencias */
+    /* Otras propiedades de estilo aquí */
+}
+button {
+    padding: 2vh 4vw;
+    font-size: 2vh;
+}
+
+
+#siBtn:hover{
+    background-color: #053a03; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+#noBtn:hover {
+    background-color: #641e0d; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+.bg-green {
+    background-color: #ffffff; /* Nuevo color de fondo verde */
+}
+
+#messageContainer {
+    font-size: 25px;
+    color: #FF0000; /* Color inicial */
+    font-family: 'YourDesiredFont', sans-serif; /* Reemplaza 'YourDesiredFont' con la fuente que desees */
+    
+    /* Borde simulado con text-shadow */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         4px  4px 4px #ffffff; /* Sombra adicional */
+
+    /* Animación de destacar */
+    animation: highlight 1.5s infinite alternate;
+}
+
+/* Definición de la animación de destacar */
+@keyframes highlight {
+    0% {
+        transform: scale(1); /* Tamaño normal */
+        color: #FF0000; /* Color inicial */
+    }
+    100% {
+        transform: scale(1.1); /* Escala un 10% más grande */
+        color: #FFD700; /* Cambia a un color dorado (o el que prefieras) */
+    }
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    #siBtn, #noBtn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    #messageContainer {
+        font-size: 20px;
+    }
+}
+
+#happyGifContainer img {
+    animation: playGif 1s steps(1) infinite;
+}
+
+@keyframes playGif {
+    0% {
+        content: url('mocha5final.gif');
+    }
+    100% {
+        content: url('mocha5final.gif');
+    }
+}
+.petal {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#siBtn {
+    animation: heartbeat 1s infinite;
+}
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(100vh); }
+}
+
+
+
